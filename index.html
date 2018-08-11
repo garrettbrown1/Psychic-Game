@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Psychic Game</title>
 
     <!--Css External Page-->
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <!--Added a link to Bootstrap-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--Java Script External Page-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
    
 </head>
 <body>
 
-    <header class="header">Guess what letter I'm thinking of!</header>
-
-    <h1 class="score">Score Board</h1>
+    <div class="jumbotron">
+        <h1 class="text-center">Psychic Game</h1>
+        <br>
+        <h2 class="text-center"> Guess what letter I'm thinking of?</h2>
+    </div>
+        <h1 class="score">Score Board</h1>
         <p id="Wins">Wins:</p>
     <br> 
 
@@ -27,16 +40,9 @@
 
     <br>
 
-    <p id="Your-Guesses">Your Guesses So Far:</p>
+    <p id="Guesses So Far">Your Guesses So Far:</p>
+    <input type: "text" id="demo">
 
-
-
-
-
-
-
-<!--Java Script External Page-->
-<script src="game.js"></script>
-    
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
