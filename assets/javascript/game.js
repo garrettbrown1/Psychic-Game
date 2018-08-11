@@ -9,8 +9,6 @@ var guessesLeft = 9;
 var guessedSoFar = [];
 var playerGuess = [];
 
-
-
 //User Guess
 document.onkeyup = function(event){
     var playerGuess = event.key;
@@ -26,7 +24,7 @@ console.log ("Computer Guess:" + computerGuess);
     if ((playerGuess === computerGuess[0]) && (guessesLeft > 0)) {
         wins++; 
         guessesLeft = 9;
-        guessesSoFar.length = 0;
+        guessedSoFar.length = 0;
         computerGuess.length = 0;
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
         alert ("You Won!");
@@ -38,12 +36,14 @@ console.log ("Computer Guess:" + computerGuess);
     }
     //--If User Guess losses 
     else {
-        lossess++;
+        losses++;
         guessesLeft = 9;
-        guessessSoFar.length = 0;
+        guessedSoFar.length = 0;
         computerGuess.length= 0;
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
         alert ("You lost! Play again!");
     }
 }
+//show text
 
+var guessedSoFar = document.getElementById("Guesses So Far");
