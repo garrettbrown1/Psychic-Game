@@ -9,9 +9,16 @@ var guessesLeft = 9;
 var guessedSoFar = [];
 var playerGuess = [];
 
+document.getElementById ("Guesses-Left").innerText=guessesLeft
+
+
 //User Guess
 document.onkeyup = function(event){
     var playerGuess = event.key;
+
+    if (guessedSoFar.includes(playerGuess)===true) {
+        return false;
+    }
 
 
 //Computer random selector
@@ -19,13 +26,14 @@ var computerGuess = Math.floor(Math.random() * computerChoices.length);
 console.log ("Computer Guess:" + computerGuess);
     
     //---If User Guess equates to computerChoice...//
-    
+    guessedSoFar.push (playerGuess);
+    document.getElementById ("Guesses-So-Far").innerText=guessedSoFar
     
     if ((playerGuess === computerGuess[0]) && (guessesLeft > 0)) {
         wins++; 
         guessesLeft = 9;
-        guessedSoFar.length = 0;
-        computerGuess.length = 0;
+        guessedSoFar = [];
+        computerGuess = [];
         var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
         alert ("You Won!");
     }
@@ -33,6 +41,7 @@ console.log ("Computer Guess:" + computerGuess);
     //--If User Guess does not but keep guessing
     else if ((playerGuess !== computerGuess [0]) && (guessesLeft > 0)) {
         guessesLeft = guessesLeft-1;
+        document.getElementById ("Guesses-Left").innerText=guessesLeft
     }
     //--If User Guess losses 
     else {
@@ -46,4 +55,4 @@ console.log ("Computer Guess:" + computerGuess);
 }
 //show text
 
-var guessedSoFar = document.getElementById("Guesses So Far");
+var text = document.getElementById("Guesses So Far");
